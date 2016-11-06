@@ -52,7 +52,7 @@ ul#email {
   font-size: .7em;
   left:25px;
   bottom: 17px;
-  width:450px;
+  width:600px;
 
 }
 ul#email a {
@@ -131,6 +131,7 @@ table td {
 	width: 15%;
   height: auto;
 	min-width: 150px;
+  max-width: 200px;
   z-index: 100;
 }
 footer {
