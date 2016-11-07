@@ -1,41 +1,45 @@
-$(function(){
+var width = null;
 
-        var checkWidth =  function () {
-            width = $(window).width();
-            if(width > 400) {
-              $('.main').backstretch("images/band.jpg");
-            }
-            else {
-              $('.main').backstretch("images/mobile.jpg");
-            }
-        }
-      checkWidth();
-      $(window).resize(checkWidth);
+var checkWidth =  function () {
+ console.log("hi");
+  width = $(window).width();
+  if(width > 400) {
 
+     $('.main').backstretch("images/band.jpg");
+  } else {
+     $('.main').backstretch("images/mobile.jpg");
+  }
 
+  if(width < 629) {
+    $("#ham-image").css("display", "block");
+    $(".ham-menu").css("display", "none");
+    $("#cross").css("display", "none");
+    $("#ham-image").click(function(){
+       $("#ham-image").css("display", "none");
+       $("#cross").css("display", "block");
+       $(".ham-menu").css("display", "block");
+    });
+    $("#cross").click(function(){
+       $("#cross").css("display", "none");
+       $("#ham-image").css("display", "block");
+       $(".ham-menu").css("display", "none");
+    });
+  } else {
+    $("#cross").css("display", "none");
+    $("#ham-image").css("display", "none");
+    $(".ham-menu").css("display", "block");
+  }
+}
 
-			});
 $(document).ready(function(){
     animateDiv('#a1');
     animateDiv('#a2');
     animateDiv('#a3');
     animateDiv('#a4');
     animateDiv('#a5');
-    $('#cross').hide();
+    checkWidth();
+    $(window).on("resize", checkWidth);
 
-   $( "#ham" ).click(function() {
-     $( ".hamm" ).slideToggle( 300, function() {
-       $( "#ham" ).hide();
-       $( '#cross' ).show();
-    });
-   });
-
-  $( '#cross' ).click(function() {
-    $( '.hamm' ).slideToggle( 300, function() {
-    $( '#cross' ).hide();
-    $( '#ham' ).show();
-  });
-});
 });
 var new_pos = function makeNewPosition(classid2){
 
@@ -52,7 +56,7 @@ var new_pos = function makeNewPosition(classid2){
 
 };
 
-function animateDiv(classid){
+function animateDiv(classid) {
     var newq =  new_pos(classid);
     var oldq = $(classid).offset();
     var speed = calcSpeed([oldq.top, oldq.left], newq);
@@ -61,7 +65,7 @@ function animateDiv(classid){
       animateDiv(classid);
     });
 
-};
+}
 
 function calcSpeed(prev, next) {
 

@@ -110,6 +110,7 @@ table td {
 .date{
 	text-align: left;
 	color: black;
+  width: 100px;
 }
 .venue,.info{
 	color:black;
@@ -199,7 +200,7 @@ td {
   padding-top: 8px;
   padding-bottom: 8px;
 }
-img#ham, img#cross {
+img#ham-image, img#cross {
   display: none;
   position: absolute;
   top: 56px;
@@ -226,14 +227,14 @@ img#ham, img#cross {
       font-size: .6em;
     }
 }
-@media only screen  and (max-width : 550px) {
+@media only screen  and (max-width : 629px) {
   table {
     z-index: -1;
   }
-  img#ham, img#cross {
+  img#ham-image {
     display: block;
   }
-  .hamm {
+  .ham-menu {
     display: none;
   }
   .main ul#menu a, .main ul#email a {
