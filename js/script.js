@@ -1,7 +1,6 @@
 var width = null;
 
 var checkWidth =  function () {
- console.log("hi");
   width = $(window).width();
   if(width > 400) {
 
