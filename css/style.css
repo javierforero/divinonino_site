@@ -60,7 +60,7 @@ ul#email a {
   float:left;
   text-decoration: none;
   letter-spacing: 2px;
-  padding-right: 15px;
+  padding-right: 30px;
 }
 nav {
   position: relative;
@@ -130,7 +130,7 @@ table td {
   left: 25px;
 	width: 15%;
   height: auto;
-	min-width: 150px;
+	min-width: 200px;
   max-width: 200px;
   z-index: 100;
 }
@@ -262,6 +262,7 @@ img#ham, img#cross {
   left: 0;
   right: 0;
   margin: auto;
+  min-width: 200px;
  }
 }
 @media only screen  and (max-width :  480px) {
